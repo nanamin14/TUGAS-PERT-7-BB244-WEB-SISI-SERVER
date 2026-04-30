@@ -1,6 +1,6 @@
 <?php
 require_once 'classes/mahasiswa.php';
-$mhs = new Mahasiswa(); //objek mahasiswa
+$mhs = new Mahasiswa(); 
 
 if ($_SERVER['REQUEST_METHOD']== 'POST') { 
     $nama = $_POST['nama'];
