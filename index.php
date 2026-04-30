@@ -6,7 +6,7 @@ $database = new Database();
 $db = $database->getConnection();
 $mhs = new Mahasiswa($db);
 
-$stmt = $mhs->read(); // Mengambil data untuk ditampilkan di tabel
+$stmt = $mhs->read(); 
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +15,9 @@ $stmt = $mhs->read(); // Mengambil data untuk ditampilkan di tabel
     <meta charset="UTF-8">
     <title>Sistem Informasi Mahasiswa</title>
     <style>
-        /* Gaya font dan layout agar mirip dengan gambar */
         body { font-family: "Times New Roman", Times, serif; margin: 30px; }
         h2 { margin-bottom: 15px; font-size: 24px; }
         
-        /* Container Form */
         .form-container { width: 300px; margin-bottom: 40px; }
         .form-group { margin-bottom: 8px; }
         .form-group label { display: block; margin-bottom: 2px; }
@@ -27,7 +25,6 @@ $stmt = $mhs->read(); // Mengambil data untuk ditampilkan di tabel
         
         button { margin-top: 10px; cursor: pointer; padding: 2px 10px; }
 
-        /* Gaya Tabel Hitam Putih Solid[cite: 3] */
         table { width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid black; }
         th, td { border: 1px solid black; padding: 8px; text-align: left; }
         th { background-color: #fff; }
@@ -40,7 +37,6 @@ $stmt = $mhs->read(); // Mengambil data untuk ditampilkan di tabel
 
     <h2>Input Mahasiswa</h2>
     <div class="form-container">
-        <!-- Form mengirim data ke proses_user.php[cite: 1, 3] -->
         <form action="proses_user.php" method="POST">
             <div class="form-group">
                 <label>NIM :</label>
@@ -95,7 +91,6 @@ $stmt = $mhs->read(); // Mengambil data untuk ditampilkan di tabel
                 <td><?= $row['email'] ?></td>
                 <td><?= $row['no_hp'] ?></td>
                 <td class="action-links">
-                    <!-- Link ke file edit dan delete sesuai daftar file di .zip[cite: 3] -->
                     <a href="editUser.php?nim=<?= $row['nim'] ?>">Edit</a> | 
                     <a href="deleteUser.php?nim=<?= $row['nim'] ?>" onclick="return confirm('Yakin hapus?')">Delete</a>
                 </td>
